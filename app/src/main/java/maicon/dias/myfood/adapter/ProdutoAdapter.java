@@ -1,6 +1,5 @@
 package maicon.dias.myfood.adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,24 +9,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import maicon.dias.myfood.OnProdutoListener;
 import maicon.dias.myfood.R;
 import maicon.dias.myfood.model.Produto;
 
 public class ProdutoAdapter extends RecyclerView.Adapter {
 
     private List<Produto> produtos;
-    private Context context;
+    private OnProdutoListener onProdutoListener;
 
-    public ProdutoAdapter(List<Produto> produtos, Context context) {
+    public ProdutoAdapter(List<Produto> produtos, OnProdutoListener onProdutoListener) {
         this.produtos = produtos;
-        this.context = context;
+        this.onProdutoListener = onProdutoListener;
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.alimento_item, parent, false);
-        ProdutoViewHolder produtoViewHolder = new ProdutoViewHolder(view);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.alimento_item, parent, false);
+        ProdutoViewHolder produtoViewHolder = new ProdutoViewHolder(view, onProdutoListener);
         return produtoViewHolder;
     }
 
