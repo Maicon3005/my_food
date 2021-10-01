@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Food</string>
+    <string name="fazer_pedido">Fazer Pedido</string>
+    <string name="planodefundo">Plano de Fundo</string>
+    <string name="teste">Funcionou</string>
+    <string name="buscarProdutos">Buscar Produto</string>
+    <string name="buscar_produto">Buscar Produto</string>
+    <string name="pedido">Pedido</string>
+    <string name="inicio">Início</string>
+    <string name="todo">TODO</string>
+</resources>
