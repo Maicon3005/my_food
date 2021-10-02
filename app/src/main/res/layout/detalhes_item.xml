@@ -27,6 +27,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginRight="10sp"
+        android:onClick="adicionarItemAoPedido"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/toolbar3"
         app:layout_constraintTop_toTopOf="@+id/toolbar3"
@@ -84,21 +85,24 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar3" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/btnAcrescentar"
         android:layout_width="51dp"
         android:layout_height="48dp"
         android:background="#303034"
+        android:onClick="acrescentarItem"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
         app:layout_constraintStart_toEndOf="@+id/txtContador"
         app:layout_constraintTop_toTopOf="@+id/toolbar3"
         app:srcCompat="@drawable/ic_icone_mais"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/btnDiminuir"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:background="#303034"
+        android:onClick="removerItem"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/txtContador"
         app:layout_constraintTop_toTopOf="@+id/toolbar3"
