@@ -15,12 +15,12 @@ public class ProdutoRepository {
     }
 
     public void popularListaDeProdutos(){
-        Produto produto = new Produto(R.drawable.feijao, "Feijão", "1 Kg", "R$ 2,69");
-        Produto produto1 = new Produto(R.drawable.leite, "Leite", "1 l", "R$ 2,70");
-        Produto produto2 = new Produto(R.drawable.macarrao, "Macarrão", "500 g", "R$ 16,70");
-        Produto produto3 = new Produto(R.drawable.farofa, "Farofa", "800 g","R$ 3,38");
-        Produto produto4 = new Produto(R.drawable.refrigerante, "Refrigerante", "250 ml", "R$ 3,00");
-        Produto produto5 = new Produto(R.drawable.batata_frita, "Batata-frita", "350 g", "R$ 5,00");
+        Produto produto = new Produto(R.drawable.feijao, "Feijão", "1 Kg", "2.69");
+        Produto produto1 = new Produto(R.drawable.leite, "Leite", "1 l", "2.70");
+        Produto produto2 = new Produto(R.drawable.macarrao, "Macarrão", "500 g", "16.70");
+        Produto produto3 = new Produto(R.drawable.farofa, "Farofa", "800 g","3.38");
+        Produto produto4 = new Produto(R.drawable.refrigerante, "Refrigerante", "250 ml", "3.00");
+        Produto produto5 = new Produto(R.drawable.batata_frita, "Batata-frita", "350 g", "5.00");
 
         estoqueDeProdutos.add(produto);
         estoqueDeProdutos.add(produto1);

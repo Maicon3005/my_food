@@ -1,9 +1,11 @@
 package maicon.dias.myfood.activitity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextClock;
 import android.widget.TextView;
@@ -14,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.w3c.dom.Text;
 
 import maicon.dias.myfood.R;
+import maicon.dias.myfood.model.Pedido;
 import maicon.dias.myfood.model.Produto;
 import maicon.dias.myfood.repository.PedidoRepository;
 
@@ -24,7 +27,7 @@ public class DetalhesActivity extends AppCompatActivity {
     private int foto;
     private String nome;
     private String descricao;
-    private String preco;
+    private double preco;
     private final int ACRESCIMO_ITEM = 1;
 
     @Override
@@ -35,7 +38,7 @@ public class DetalhesActivity extends AppCompatActivity {
         foto = getIntent().getExtras().getInt("fotoProduto");
         nome = getIntent().getExtras().getString("nomeProduto");
         descricao = getIntent().getExtras().getString("descricaoProduto");
-        preco = getIntent().getExtras().getString("preco");
+        preco = Double.parseDouble(getIntent().getExtras().getString("preco"));
 
         ImageView imgProduto = (ImageView) findViewById(R.id.imgDetalhe);
         TextView  txtNomeProduto = (TextView) findViewById(R.id.txtTitleDetalhe);
@@ -48,6 +51,14 @@ public class DetalhesActivity extends AppCompatActivity {
         this.quantidadeDeItems = 0;
 
         txtContador = (TextView) findViewById(R.id.txtContador);
+
+        Button btnAdicionar = (Button) findViewById(R.id.btnAdicionar);
+        btnAdicionar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adicionarItemAoPedido(view);
+            }
+        });
     }
 
     public void acrescentarItem(View view) {
@@ -71,11 +82,11 @@ public class DetalhesActivity extends AppCompatActivity {
         toast.show();
     }
 
-
     public void adicionarItemAoPedido(View view) {
         PedidoRepository pedidoRepository = new PedidoRepository();
-        Produto produto = new Produto(foto, nome, descricao, preco);
-        boolean resultado = pedidoRepository.salvarItem(produto);
+        Pedido pedido = new Pedido(nome, quantidadeDeItems, preco * quantidadeDeItems);
+
+        boolean resultado = pedidoRepository.salvarItem(pedido);
 
         if (resultado) {
             mostrarToast(quantidadeDeItems + " " + nome + " adicionado(s) ao pedido");

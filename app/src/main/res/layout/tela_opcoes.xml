@@ -25,7 +25,7 @@
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
@@ -63,24 +63,26 @@
         android:layout_marginStart="90sp"
         android:layout_marginTop="4dp"
         android:backgroundTint="#303034"
+        android:onClick="irParaInicio"
         android:contentDescription="@string/inicio"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
         app:srcCompat="@drawable/ic_icone_casa"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+        />
 
     <ImageButton
-        android:id="@+id/btnPedido"
+        android:id="@+id/btnMostrarPedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:layout_marginEnd="90sp"
+        android:onClick="mostrarPedido"
         android:backgroundTint="#303034"
-        android:contentDescription="@string/pedido"
+        android:contentDescription="@string/abrirPedido"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
-        app:srcCompat="@drawable/ic_icone_pedido"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+        app:srcCompat="@drawable/ic_icone_pedido" />
 
     <TextView
         android:id="@+id/lblInicio"
@@ -100,8 +102,24 @@
         android:labelFor="@+id/btnPedido"
         android:text="@string/pedido"
         android:textColor="#FEFCE6"
-        app:layout_constraintBottom_toBottomOf="@+id/btnPedido"
-        app:layout_constraintEnd_toEndOf="@+id/btnPedido"
-        app:layout_constraintStart_toStartOf="@+id/btnPedido" />
+        app:layout_constraintBottom_toBottomOf="@+id/btnMostrarPedido"
+        app:layout_constraintEnd_toEndOf="@+id/btnMostrarPedido"
+        app:layout_constraintStart_toStartOf="@+id/btnMostrarPedido" />
+
+    <TextView
+        android:id="@+id/txtNotificacao"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="4dp"
+        android:background="#F00"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnMostrarPedido"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="@+id/btnMostrarPedido"
+        app:layout_constraintTop_toTopOf="@+id/btnMostrarPedido"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

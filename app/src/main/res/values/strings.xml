@@ -8,4 +8,13 @@
     <string name="pedido">Pedido</string>
     <string name="inicio">Início</string>
     <string name="todo">TODO</string>
+    <string name="feijao">Feijão</string>
+    <string name="quantidade">2</string>
+    <string name="preco">R$ 2,69</string>
+    <string name="comprar">Comprar</string>
+    <string name="total">R$ 2,69</string>
+    <string name="totallabel">Total</string>
+    <string name="logo">TODO</string>
+    <string name="liexeiraicone">TODO</string>
+    <string name="abrirPedido">abrirPedido</string>
 </resources>
